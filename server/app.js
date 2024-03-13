@@ -29,6 +29,34 @@ function fibonacci(n) {
   return b;
 }
 
+// Function to quickSort an array
+function quickSort(arr, start, end) {
+    // Base case: If the array has less than two elements
+    if (start >= end) {
+        return; 
+    }
+    let index = partition(arr, start, end);
+    quickSort(arr, start, index - 1); // Recursively apply to the left subarray
+    quickSort(arr, index + 1, end); // Recursively apply to the right subarray
+}
+
+// Function to partition the array for quickSort
+function partition(arr, start, end) {
+    const pivotValue = arr[end]; // Choosing the pivot from the end
+    let pivotIndex = start;
+    for (let i = start; i < end; i++) {
+        if (arr[i] < pivotValue) {
+            // Swapping elements
+            [arr[i], arr[pivotIndex]] = [arr[pivotIndex], arr[i]];
+            pivotIndex++;
+        }
+    }
+    // Swapping the pivot to the correct position
+    [arr[pivotIndex], arr[end]] = [arr[end], arr[pivotIndex]];
+    return pivotIndex;
+}
+
+
 // root path
 app.get("/", (req, res) => {
   res.send("Welcome to the server!");
@@ -62,6 +90,18 @@ app.post("/api/fibo", (req, res) => {
   const result = fibonacci(n);
   res.json({ fibonacciNumber: result });
 });
+
+//sort endpoint POST
+app.post('/api/sort', (req, res) => {
+    let { array } = req.body;
+    // Validate input
+    if (!Array.isArray(array) || !array.every(Number.isInteger)) {
+        return res.status(400).json({ error: 'Input must be an array of integers.' });
+    }
+    quickSort(array, 0, array.length - 1); // Sorting the array
+    res.json({ sortedArray: array });
+});
+
 
 // Start the server on port 3000 and listen for incoming requests
 app.listen(port, () => {
