@@ -1,8 +1,10 @@
 const express = require("express");
+const cors = require("cors");
 const app = express();
 const port = 3000;
 
 app.use(express.json()); // Middleware to parse JSON bodies
+app.use(cors()); // Enable CORS for all requests
 
 // Function to calculate the nth Fibonacci number - slower recursive approach 2.28 s for 40
 // function fibonacci(n) {
