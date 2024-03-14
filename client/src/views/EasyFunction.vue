@@ -9,10 +9,10 @@
 </template>
 
 <script>
-import axios from 'axios';
+import axios from "axios";
 
 export default {
-  name: 'EasyFunction',
+  name: "EasyFunction",
   data() {
     return {
       num1: 0,
@@ -22,11 +22,22 @@ export default {
   },
   methods: {
     async callEasyFunction() {
+      let n1 = parseFloat(this.num1);
+      let n2 = parseFloat(this.num2);
+
+      if (!Number.isInteger(n1) || !Number.isInteger(n2)) {
+        alert("Please enter valid integer numbers.");
+        return;
+      }
+
       try {
-        const response = await axios.get(`http://localhost:3000/api/easyFunction?num1=${this.num1}&num2=${this.num2}`);
+        const response = await axios.get(
+          `http://localhost:3000/api/easyFunction?num1=${n1}&num2=${n2}`
+        );
         this.sum = response.data.sum;
       } catch (error) {
-        console.error('There was an error!', error);
+        console.error("There was an error!", error);
+        this.sum = "An error occurred. Please try again.";
       }
     },
   },
