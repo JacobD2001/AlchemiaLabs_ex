@@ -1,8 +1,6 @@
 const request = require('supertest');
 const app = require('../app'); 
 
-//npm test - for running the tests
-
 // Test the /api/easyFunction endpoint
 describe('GET /api/easyFunction', () => {
   it('responds with json containing the sum', done => {
