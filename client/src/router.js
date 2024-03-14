@@ -1,7 +1,8 @@
-import { createRouter, createWebHistory } from 'vue-router';
-import EasyFunction from './components/EasyFunction.vue';
-import Fibo from './components/Fibo.vue';
-import QuickSort from './components/QuickSort.vue';
+import { createRouter, createWebHistory } from "vue-router";
+import Home from "./components/Home.vue";
+import EasyFunction from "./components/EasyFunction.vue";
+import Fibo from "./components/Fibo.vue";
+import QuickSort from "./components/QuickSort.vue";
 
 //to do: add error handling on front end
 //to do: add css to frontend
@@ -11,20 +12,29 @@ import QuickSort from './components/QuickSort.vue';
 
 const routes = [
   {
-    path: '/easyFunction',
-    name: 'EasyFunction',
+    path: "/",
+    redirect: "/home",
+  },
+  {
+    path: '/home', 
+    name: 'Home',
+    component: Home, 
+  },
+  {
+    path: "/easyFunction",
+    name: "EasyFunction",
     component: EasyFunction,
   },
   {
-    path: '/fibo',
-    name: 'Fibo',
+    path: "/fibo",
+    name: "Fibo",
     component: Fibo,
   },
   {
-    path: '/quickSort',
-    name: 'QuickSort',
+    path: "/quickSort",
+    name: "QuickSort",
     component: QuickSort,
-  }
+  },
 ];
 
 const router = createRouter({

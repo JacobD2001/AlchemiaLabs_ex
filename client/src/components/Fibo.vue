@@ -34,7 +34,7 @@ export default {
 </script>
 
 <style>
-.easy-function {
+.fibo {
   /* Style as needed */
 }
 </style>

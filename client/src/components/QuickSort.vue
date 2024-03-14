@@ -49,3 +49,9 @@ export default {
   },
 };
 </script>
+
+<style>
+.quick-sort {
+  /* Style as needed */
+}
+</style>
