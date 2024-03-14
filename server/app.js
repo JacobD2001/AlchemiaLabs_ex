@@ -21,7 +21,6 @@ function fibonacci(n) {
 
 // Function to quickSort an array
 function quickSort(arr, start, end) {
-  // Base case: If the array has less than two elements
   if (start >= end) {
     return;
   }
@@ -89,7 +88,7 @@ app.post("/api/sort", (req, res) => {
       .json({ error: "Input must be an array of integers." });
   }
 
-  quickSort(array, 0, array.length - 1); // Sorting the array
+  quickSort(array, 0, array.length - 1);
   res.json({ sortedArray: array });
 });
 
