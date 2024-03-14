@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Home from "./components/Home.vue";
-import EasyFunction from "./components/EasyFunction.vue";
-import Fibo from "./components/Fibo.vue";
-import QuickSort from "./components/QuickSort.vue";
+import Home from "./views/Home.vue";
+import EasyFunction from "./views/EasyFunction.vue";
+import Fibo from "./views/Fibo.vue";
+import QuickSort from "./views/QuickSort.vue";
 
 //to do: add error handling on front end
 //to do: add css to frontend
