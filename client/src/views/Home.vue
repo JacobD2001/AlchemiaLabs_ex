@@ -1,11 +1,11 @@
 <template>
   <div class="home">
-    <h1>Welcome to the API Dashboard</h1>
+    <h1>Welcome to the Alchemia API Dashboard</h1>
     <nav>
       <ul>
-        <li><router-link to="/easyfunction">Easy Function API</router-link></li>
-        <li><router-link to="/fibo">Fibonacci API</router-link></li>
-        <li><router-link to="/quicksort">Quick Sort API</router-link></li>
+        <li><router-link to="/easyfunction" class="api-button">Easy Function API</router-link></li>
+        <li><router-link to="/fibo" class="api-button">Fibonacci API</router-link></li>
+        <li><router-link to="/quicksort" class="api-button">Quick Sort API</router-link></li>
       </ul>
     </nav>
   </div>
@@ -21,12 +21,24 @@ export default {
 ul {
   list-style-type: none;
   padding: 0;
+  display: flex; 
+  justify-content: center; 
+  gap: 10px; 
 }
-li {
-  margin: 10px 0;
+
+.api-button {
+  display: inline-block; 
+  background-color: #0f3460; 
+  color: #00ffea; 
+  text-decoration: none; 
+  padding: 10px 20px;
+  border-radius: 5px; 
+  border: none; 
+  cursor: pointer; 
+  transition: background-color 0.3s ease; 
 }
-a {
-  text-decoration: none;
-  color: #42b983; 
+
+.api-button:hover {
+  background-color: #1a1a2e; 
 }
 </style>

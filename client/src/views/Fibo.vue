@@ -1,9 +1,18 @@
 <template>
   <div class="fibo">
     <h1>Fibonacci</h1>
-    <input v-model="num" type="number" placeholder="Enter index of fibonacci number" />
-    <button @click="callFibo">Calculate Fibonacci</button>
-    <div v-if="fibo !== null">Fibonacci: {{ fibo }}</div>
+    <h2>Calculate the nth Fibonacci number</h2>
+    <div class="form-container">
+      <input
+        v-model="num"
+        type="number"
+        placeholder="Enter index of fibonacci number"
+      />
+      <button @click="callFibo">Calculate Fibonacci</button>
+    </div>
+    <div v-if="fibo !== null" class="result-display">
+      Fibonacci number: {{ fibo }}
+    </div>
   </div>
 </template>
 
@@ -31,7 +40,7 @@ export default {
         const response = await axios.post("http://localhost:3000/api/fibo", {
           n: this.num,
         });
-        this.fibo = response.data.fibonacciNumber; 
+        this.fibo = response.data.fibonacciNumber;
       } catch (error) {
         console.error("There was an error!", error);
       }

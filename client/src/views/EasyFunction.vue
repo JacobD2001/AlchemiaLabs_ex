@@ -1,10 +1,13 @@
 <template>
   <div class="easy-function">
     <h1>Easy Function</h1>
-    <input v-model="num1" type="number" placeholder="Enter number 1" />
-    <input v-model="num2" type="number" placeholder="Enter number 2" />
-    <button @click="callEasyFunction">Calculate Sum</button>
-    <div v-if="sum !== null">Sum: {{ sum }}</div>
+    <h2>Calculate the sum of two integer numbers</h2>
+    <div class="form-container">
+      <input v-model="num1" type="number" placeholder="Enter number 1" />
+      <input v-model="num2" type="number" placeholder="Enter number 2" />
+      <button @click="callEasyFunction">Calculate Sum</button>
+    </div>
+    <div v-if="sum !== null" class="result-display">Sum: {{ sum }}</div>
   </div>
 </template>
 

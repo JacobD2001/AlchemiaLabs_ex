@@ -1,13 +1,18 @@
 <template>
   <div class="quick-sort">
     <h1>Quick Sort</h1>
-    <input
-      v-model="arr"
-      type="text"
-      placeholder="Enter numbers separated by commas (e.g., 3,1,4)"
-    />
-    <button @click="callQuickSort">Sort</button>
-    <div v-if="sortedArr !== null">Sorted Array: {{ sortedArr }}</div>
+    <h2>Sort an array of numbers in ascending order</h2>
+    <div class="form-container">
+      <input
+        v-model="arr"
+        type="text"
+        placeholder="Enter numbers separated by commas (e.g., 3,1,4)"
+      />
+      <button @click="callQuickSort">Sort</button>
+    </div>
+    <div v-if="sortedArr !== null" class="result-display">
+      Sorted Array: {{ sortedArr }}
+    </div>
   </div>
 </template>
 
