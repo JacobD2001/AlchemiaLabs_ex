@@ -1,7 +1,6 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
-const port = 3000;
 
 app.use(express.json()); // Middleware to parse JSON bodies
 app.use(cors()); // Enable CORS for all requests - for this project it may stay like this but on production it should be more restrictive
@@ -104,8 +103,4 @@ app.post('/api/sort', (req, res) => {
     res.json({ sortedArray: array });
 });
 
-
-// Start the server on port 3000 and listen for incoming requests
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
-});
+module.exports = app; 
