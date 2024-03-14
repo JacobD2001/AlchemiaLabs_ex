@@ -1,7 +1,7 @@
 <template>
   <div class="fibo">
     <h1>Fibonacci</h1>
-    <input v-model="num" type="number" placeholder="Enter number" />
+    <input v-model="num" type="number" placeholder="Enter index of fibonacci number" />
     <button @click="callFibo">Calculate Fibonacci</button>
     <div v-if="fibo !== null">Fibonacci: {{ fibo }}</div>
   </div>
@@ -20,6 +20,13 @@ export default {
   },
   methods: {
     async callFibo() {
+      let n = parseFloat(this.num);
+
+      if (!Number.isInteger(n)) {
+        alert("Please enter a valid integer number.");
+        return;
+      }
+
       try {
         const response = await axios.post("http://localhost:3000/api/fibo", {
           n: this.num,
