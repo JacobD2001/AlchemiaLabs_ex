@@ -4,11 +4,10 @@ import EasyFunction from "./views/EasyFunction.vue";
 import Fibo from "./views/Fibo.vue";
 import QuickSort from "./views/QuickSort.vue";
 
-//to do: easyfunction - now sum of 2 ints but it could summarize 2 decimals 
-//to do: add css to frontend
-//to do: test all functions
 //to do: check structure of the project(remember about cors)
 //to do: add unit tests
+//to do: easyfunction - now sum of 2 ints but it could summarize 2 decimals 
+//to do: add css to frontend
 
 const routes = [
   {
