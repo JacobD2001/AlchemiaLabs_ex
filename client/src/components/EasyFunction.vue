@@ -33,7 +33,6 @@ export default {
 };
 </script>
 
-<!-- Add style here -->
 <style>
 .easy-function {
   /* Style as needed */
